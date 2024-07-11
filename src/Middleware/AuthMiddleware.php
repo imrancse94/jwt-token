@@ -15,7 +15,7 @@ class AuthMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(auth('api')->check()){
+        if(auth()->check()){
             return $next($request);
         }
         return \response()->json(['message' => 'Unauthorized'], 401);
