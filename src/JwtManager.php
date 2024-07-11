@@ -174,6 +174,6 @@ class JwtManager
     public function isTokenExpired($payload)
     {
         $now = time();
-        return isset($payload->exp) && $payload->exp <= $now;
+        return isset($payload['exp']) && $payload['exp'] <= $now;
     }
 }
